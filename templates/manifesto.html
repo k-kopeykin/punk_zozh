@@ -1,4 +1,33 @@
-<section class="buttons-block">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Что тут вообще происходит?</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="intro-container">
+
+        <section class="message-block">
+
+            <h1 class="manifesto-title">
+                Это приложение не сделает тебя идеальным.
+            </h1>
+
+            <ul>
+                <li>Тут не будут орать про успешный успех.</li>
+                <li>Плохие дни — часть системы.</li>
+                <li>Иногда выпить воды уже достижение.</li>
+                <li>Мы пытаемся не стать идеальными, а перестать разваливаться.</li>
+            </ul>
+
+        </section>
+
+        <section class="buttons-block">
 
             <a href="/checkin" class="primary-button">
                 Ладно, давай попробуем
