@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панк-ЗОЖ</title>
+
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="intro-container">
+
+        <!-- Обратный отсчет -->
+        <section class="countdown-block">
+            <p class="countdown-label">До лета осталось</p>
+            <h1 id="countdown" days_before_summer="days_before_summer">{{days_before_summer}}</h1>
+        </section>
+
+        <!-- Контекстная фраза -->
+        <section class="message-block">
+            <p>
+                За это время ещё можно:
+            </p>
+
+            <ul>
+                <li>начать спать нормально</li>
+                <li>вспомнить вкус воды</li>
+                <li>перестать уставать после лестницы</li>
+            </ul>
+        </section>
+
+        <!-- Кнопки -->
+        <section class="buttons-block">
+
+            <!-- Переход на check-in -->
+            <a href="/checkin" class="primary-button">
+                Ладно, давай попробуем
+            </a>
+
+            <!-- Переход на манифест -->
+            <a href="/manifesto" class="secondary-button">
+                Что тут вообще происходит?
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+
