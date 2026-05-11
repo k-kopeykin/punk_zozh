@@ -16,6 +16,10 @@ def show_manifesto():
 def show_checkin():
     return render_template('checkin.html')
 
+@app.route('/result')
+def show_result():
+    return render_template('result.html')
+
 
 if __name__ == "__main__":
     app.run()
