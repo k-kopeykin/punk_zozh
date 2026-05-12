@@ -150,7 +150,7 @@
                 let questionBlock = button.closest(".question-block");
                 let questionButtons = questionBlock.querySelectorAll(".answer-button");
                 questionButtons.forEach(btn => {
-                    btn.classlist.remove("selected");
+                    btn.classList.remove("selected");
                 });
 
                 button.classList.add("selected");
