@@ -215,3 +215,12 @@ body {
 
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
+
+.intro-screen {
+    min-height: calc(100vh - 40px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}

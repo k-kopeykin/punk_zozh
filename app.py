@@ -4,9 +4,9 @@ from functions import countdown
 app = Flask(__name__)
 
 @app.route('/')
-def show_index():
+def show_intro():
     days_before_summer = countdown()
-    return render_template('index.html', days_before_summer=days_before_summer)
+    return render_template('intro.html', days_before_summer=days_before_summer)
 
 @app.route('/manifesto')
 def show_manifesto():
