@@ -252,3 +252,7 @@ body {
 
     margin-bottom: 12px;
 }
+
+.result-card p {
+    margin-bottom: 16px;
+}

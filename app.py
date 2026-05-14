@@ -21,7 +21,7 @@ def show_checkin():
         for category in request.form:
             answers[category] = (request.form[category])
         results = score_result(answers)
-        return render_template('result.html', results=results)
+    return render_template('result.html', results=results)
 
 
 

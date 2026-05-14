@@ -29,42 +29,12 @@
             <!-- Один блок результата -->
 
             <div class="result-card">
-
+                {%for result in results%}
                 <p>
-                    {{results[0]}}
+                    {{result}}
                 </p>
-
+                {%endfor%}
             </div>
-
-            <!-- Следующий блок -->
-
-            <div class="result-card">
-
-                <p>
-                    {{results[1]}}
-                </p>
-
-            </div>
-
-            <!-- И так далее -->
-
-            <div class="result-card">
-
-                <p>
-                    {{results[2]}}
-                </p>
-
-            </div>
-
-
-            <div class="result-card">
-
-                <p>
-                    {{results[3]}}
-                </p>
-
-            </div>
-
 
         </section>
 
