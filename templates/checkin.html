@@ -11,6 +11,7 @@
 <body>
 
     <main class="intro-container">
+        <form method="POST">
 
         <section class="message-block">
 
@@ -27,22 +28,29 @@
             <h2>Ел сегодня?</h2>
 
             <div class="answers">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="food" value="1">
+                        Кофе — тоже завтрак
+                    
+                </label>
 
-                <button class="answer-button">
-                    Кофе — тоже завтрак
-                </button>
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="food" value="2">
+                        Живу на перекусах
+                    
+                </label>
 
-                <button class="answer-button">
-                    Живу на перекусах
-                </button>
-
-                <button class="answer-button">
-                    Днём голодно, вечером жор
-                </button>
-
-                <button class="answer-button">
-                    Питаюсь хорошо — организм не жалуется
-                </button>
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="food" value="3">
+                        В целом, норм, но иногда пусто, а иногда густо
+                    
+                </label>
+                
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="food" value="4">
+                        Питаюсь хорошо — организм не жалуется
+                    
+                </label>
 
             </div>
 
@@ -56,21 +64,25 @@
 
             <div class="answers">
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="sleep" value="1">
                     Что такое сон?
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="sleep" value="2">
                     Ложусь поздно, встаю рано
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="sleep" value="3">
                     В выходные отсыпаюсь
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="sleep" value="4">
                     Не нарушаю режим!
-                </button>
+                </label>
 
             </div>
 
@@ -84,21 +96,25 @@
 
             <div class="answers">
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="activity" value="1">
                     Лежу, не жужжу
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="activity" value="2">
                     Двигаюсь в приступах мотивации
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="activity" value="3">
                     Эпизодический физкультурник
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="activity" value="4">
                     Ржаветь не собираюсь!
-                </button>
+                </label>
 
             </div>
 
@@ -112,21 +128,25 @@
 
             <div class="answers">
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="emotion" value="1">
                     На морально-волевых
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="emotion" value="2">
                     Держусь, назло врагам
-                </button>
+                </label>
 
-                <button class="answer-button">
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="emotion" value="3">
                     В пределах нормы
-                </button>
+                </label>
 
-                <button class="answer-button">
-                    Даже жить хочется
-                </button>
+                <label class="answer-button">
+                    <input type="radio" class="answer" name="emotion" value="4">
+                    Жить хорошо и жизнь хороша!
+                </label>
 
             </div>
 
@@ -136,12 +156,12 @@
 
         <section class="buttons-block">
 
-            <a href="/result" class="primary-button">
+            <button type="submit" class="primary-button">
                 Поехали!
-            </a>
+            </button>
 
         </section>
-
+        </form>
     </main>
     <script>
         let buttons = document.querySelectorAll(".answer-button");

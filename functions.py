@@ -1,4 +1,16 @@
 from datetime import date
+import json
+
+
+def score_result(answers):
+    
+    with open('text.json', 'r', encoding='utf-8') as f:
+        texts = json.load(f)
+        result = []
+        for category in answers:
+            result.append(texts[category][answers[category]])
+    return result
+
 
 
 def countdown():
@@ -8,4 +20,8 @@ def countdown():
 
     return summer_starts_in.days
 
-countdown()
+score = []
+for i in range(4):
+    score += str(i)
+print(score)
+
