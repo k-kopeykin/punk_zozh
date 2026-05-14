@@ -12,41 +12,86 @@
 
     <main class="intro-container">
 
+        <!-- Заголовок -->
+
         <section class="message-block">
 
             <h1 class="manifesto-title">
-                Твоя оценка {{score}}. Организм пока держится.
+                Ну что, картина примерно такая:
             </h1>
 
-            <p>
-                В основном на моральной инерции.
-                Но это уже неплохо.
-            </p>
+        </section>
+
+        <!-- Результаты -->
+
+        <section class="results-block">
+
+            <!-- Один блок результата -->
+
+            <div class="result-card">
+
+                <p>
+                    {{results[0]}}
+                </p>
+
+            </div>
+
+            <!-- Следующий блок -->
+
+            <div class="result-card">
+
+                <p>
+                    {{results[1]}}
+                </p>
+
+            </div>
+
+            <!-- И так далее -->
+
+            <div class="result-card">
+
+                <p>
+                    {{results[2]}}
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <p>
+                    {{results[3]}}
+                </p>
+
+            </div>
+
 
         </section>
+
+        <!-- Микро-действие -->
 
         <section class="message-block">
 
-            <p>
+            <p class="habit-title">
                 Попробуй сегодня:
             </p>
 
-            <ul>
-                <li>выпить воды</li>
-                <li>немного пройтись</li>
-                <li>не воевать с собой весь вечер</li>
-            </ul>
+            <p>
+                Дойти до дальнего магазина вместо ближайшего.
+            </p>
 
         </section>
 
+        <!-- Кнопки -->
+
         <section class="buttons-block">
 
-            <a href="/" class="primary-button">
-                Вернуться на главную
+            <a href="#" class="primary-button">
+                Сохранить результат
             </a>
 
-            <a href="#" class="secondary-button">
-                Сохранить этот бардак
+            <a href="/" class="secondary-button">
+                На главную
             </a>
 
         </section>
