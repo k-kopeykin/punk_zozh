@@ -272,3 +272,81 @@ body {
 
     font-style: italic;
 }
+
+/* ===== Блок ответов ===== */
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===== Карточка ответа ===== */
+
+.answer-button {
+    display: block;
+
+    padding: 16px 18px;
+
+    border: 2px solid #2e2e2e;
+    border-radius: 14px;
+
+    background-color: #1b1b1b;
+
+    color: #f5f5f5;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* ===== Hover ===== */
+
+.answer-button:hover {
+    border-color: #5a5a5a;
+
+    transform: translateY(-2px);
+}
+
+/* ===== Выбранный ответ ===== */
+
+.answer-button.selected {
+    background-color: #2a2a2a;
+
+    border-color: #b6ff8a;
+
+    color: #ffffff;
+
+    box-shadow: 0 0 12px rgba(182, 255, 138, 0.2);
+}
+
+/* ===== Скрываем radio ===== */
+
+.answer-button input[type="radio"] {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+/* ===== Заголовок вопроса ===== */
+
+.question-block h2 {
+    margin-bottom: 14px;
+
+    font-size: 1.2rem;
+
+    color: #f0f0f0;
+}
+
+/* ===== Отступы между вопросами ===== */
+
+.question-block {
+    margin-bottom: 32px;
+}

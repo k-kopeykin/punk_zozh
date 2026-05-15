@@ -25,6 +25,9 @@ def show_checkin():
         results = score_result(answers)
     return render_template('result.html', results=results)
 
+@app.route('/articles')
+def show_articles():
+    return render_template('articles.html')
 
 
 

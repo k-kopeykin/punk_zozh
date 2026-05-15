@@ -1,3 +1,5 @@
+<!-- ===== result.html ===== -->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,18 +24,20 @@
 
         </section>
 
-        <!-- Результаты -->
+        <!-- Результат -->
 
         <section class="results-block">
 
-            <!-- Один блок результата -->
-
             <div class="result-card">
-                {%for result in results%}
+
+                {% for result in results %}
+
                 <p>
-                    {{result}}
+                    {{ result }}
                 </p>
-                {%endfor%}
+
+                {% endfor %}
+
             </div>
 
         </section>
@@ -54,15 +58,23 @@
 
         <!-- Кнопки -->
 
-        <section class="buttons-block">
+        <section class="buttons-block dual-buttons">
 
-            <a href="#" class="primary-button">
-                Сохранить результат
+            <a href="/checkin" class="primary-button">
+                Проверить себя ещё раз
             </a>
 
-            <a href="/" class="secondary-button">
-                На главную
-            </a>
+            <div class="small-buttons">
+
+                <a href="/" class="secondary-button small-button">
+                    На главную
+                </a>
+
+                <a href="/articles" class="secondary-button small-button">
+                    Почитать
+                </a>
+
+            </div>
 
         </section>
 

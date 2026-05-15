@@ -1,3 +1,5 @@
+<!-- ===== manifesto.html ===== -->
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Манифест</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -31,39 +32,27 @@
             </p>
 
             <p>
-                Это про протест.
-            </p>
-
-            <p>
-                Против гламурных фитнес-гуру,
-                которые рассказывают,
-                как после 30 срочно стать идеальной версией себя.
-            </p>
-
-            <p>
-                Против продавцов волшебных таблеток,
-                успешного успеха
+                Это протест против фитнес-пафоса,
+                волшебных таблеток
                 и чувства вины за съеденный тортик.
             </p>
 
             <p>
                 Я хочу показать,
                 что хорошее самочувствие —
-                это не элитный клуб и не магия.
+                это не элитный клуб.
             </p>
 
             <p>
                 Это обычное состояние организма,
                 к которому можно прийти
-                без самоистязания,
-                сверхусилий
+                без самоистязания
                 и культа продуктивности.
             </p>
 
             <p>
                 Через сон.
                 Через движение.
-                Через еду.
                 Через маленькие регулярные действия.
             </p>
 
@@ -80,15 +69,25 @@
 
         </section>
 
-        <section class="buttons-block">
+        <!-- Кнопки -->
+
+        <section class="buttons-block dual-buttons">
 
             <a href="/checkin" class="primary-button">
-                Ладно, убедил. Поехали
+                Ладно, убедил
             </a>
 
-            <a href="/" class="secondary-button">
-                На главную
-            </a>
+            <div class="small-buttons">
+
+                <a href="/" class="secondary-button small-button">
+                    На главную
+                </a>
+
+                <a href="/articles" class="secondary-button small-button">
+                    Почитать
+                </a>
+
+            </div>
 
         </section>
 
