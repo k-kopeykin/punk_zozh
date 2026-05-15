@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from functions import countdown, score_result, day_word
+from functions import countdown, score_result, day_word, get_summer_phrase
 
 app = Flask(__name__)
 
@@ -7,7 +7,8 @@ app = Flask(__name__)
 def show_intro():
     days_before_summer = countdown()
     word = day_word(days_before_summer)
-    return render_template('intro.html', days_before_summer=days_before_summer, word=word)
+    summer_phrase = get_summer_phrase(days_before_summer)
+    return render_template('intro.html', days_before_summer=days_before_summer, word=word, summer_phrase=summer_phrase)
 
 @app.route('/manifesto')
 def show_manifesto():

@@ -1,6 +1,6 @@
 from datetime import date
 import json
-
+from random import choice
 
 def score_result(answers):
     
@@ -30,3 +30,23 @@ def day_word(summer_starts_in):
     else:
         word = "дней"
     return word
+
+def get_summer_phrase(summer_starts_in):
+    with open("summer_texts.json", "r", encoding="utf-8") as f:
+        summer_phrases = json.load(f)
+    if 1 <= summer_starts_in <= 21:
+        summer_phrase = choice(summer_phrases["1-21"])
+    elif 22 <= summer_starts_in <= 60:
+        summer_phrase = choice(summer_phrases["22-60"])
+    elif 61 <= summer_starts_in <= 120:
+        summer_phrase = choice(summer_phrases["61-120"])
+    elif 121 <= summer_starts_in <= 240:
+        summer_phrase = choice(summer_phrases["121-240"])
+    elif 241 <= summer_starts_in <= 365:
+        summer_phrase = choice(summer_phrases["241-365"])
+    else:
+        summer_phrase = "Вот такое странное лето..."
+    return summer_phrase
+    
+
+
