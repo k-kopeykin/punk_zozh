@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
-from functions import countdown, score_result
+from functions import countdown, score_result, day_word
 
 app = Flask(__name__)
 
 @app.route('/')
 def show_intro():
     days_before_summer = countdown()
-    return render_template('intro.html', days_before_summer=days_before_summer)
+    word = day_word(days_before_summer)
+    return render_template('intro.html', days_before_summer=days_before_summer, word=word)
 
 @app.route('/manifesto')
 def show_manifesto():
