@@ -1,84 +1,30 @@
-<!-- ===== result.html ===== -->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Результат</title>
+{% block title %}Результат | Панк-ЗОЖ{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block content %}
+    <section class="message-block">
+        <h1 class="manifesto-title">Ну что, картина примерно такая:</h1>
+    </section>
 
-<body>
+    <section class="results-block">
+        <div class="result-card">
+            {% for result in results %}
+                <p>{{ result }}</p>
+            {% endfor %}
+        </div>
+    </section>
 
-    <main class="intro-container">
+    <section class="message-block">
+        <p class="habit-title">Попробуй сегодня:</p>
+        <p>{{ action }}</p>
+    </section>
 
-        <!-- Заголовок -->
-
-        <section class="message-block">
-
-            <h1 class="manifesto-title">
-                Ну что, картина примерно такая:
-            </h1>
-
-        </section>
-
-        <!-- Результат -->
-
-        <section class="results-block">
-
-            <div class="result-card">
-
-                {% for result in results %}
-
-                <p>
-                    {{ result }}
-                </p>
-
-                {% endfor %}
-
-            </div>
-
-        </section>
-
-        <!-- Микро-действие -->
-
-        <section class="message-block">
-
-            <p class="habit-title">
-                Попробуй сегодня:
-            </p>
-
-            <p>
-                Дойти до дальнего магазина вместо ближайшего.
-            </p>
-
-        </section>
-
-        <!-- Кнопки -->
-
-        <section class="buttons-block dual-buttons">
-
-            <a href="/checkin" class="primary-button">
-                Проверить себя ещё раз
-            </a>
-
-            <div class="small-buttons">
-
-                <a href="/" class="secondary-button small-button">
-                    На главную
-                </a>
-
-                <a href="/articles" class="secondary-button small-button">
-                    Почитать
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-</body>
-</html>
+    <section class="buttons-block dual-buttons">
+        <a href="/checkin" class="primary-button">Проверить себя ещё раз</a>
+        <div class="small-buttons">
+            <a href="/" class="secondary-button small-button">На главную</a>
+            <a href="/articles" class="secondary-button small-button">Почитать</a>
+        </div>
+    </section>
+{% endblock %}

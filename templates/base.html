@@ -1,0 +1,28 @@
+<!-- ===== base.html ===== -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Панк-ЗОЖ{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="intro-container">
+        
+        <!-- Сюда будет вставляться уникальный контент каждой страницы -->
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- Глобальная кнопка кризисного режима (внизу экрана, всегда доступна) -->
+    <div class="global-crisis-nav">
+        <a href="/crisis" class="crisis-button">
+            ⚠️ Не вывожу
+        </a>
+    </div>
+
+</body>
+</html>

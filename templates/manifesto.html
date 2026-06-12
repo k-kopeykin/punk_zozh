@@ -1,97 +1,25 @@
-<!-- ===== manifesto.html ===== -->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Манифест</title>
+{% block title %}Манифест | Панк-ЗОЖ{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block content %}
+    <section class="message-block manifesto-block">
+        <h1 class="manifesto-title">Что такое Панк-ЗОЖ?</h1>
+        <p>Внезапно, ЗОЖ — это здоровый образ жизни.</p>
+        <p>А панк — это не только про ирокезы, косухи и сомнительные жизненные решения.</p>
+        <p>Это протест против фитнес-пафоса, волшебных таблеток и чувства вины за съеденный тортик.</p>
+        <p>Я хочу показать, что хорошее самочувствие — это не элитный клуб.</p>
+        <p>Это обычное состояние организма, к которому можно прийти без самоистязания и культа продуктивности.</p>
+        <p>Через сон. Через движение. Через маленькие регулярные действия.</p>
+        <p>В общем: будем потихоньку чинить тушку, а не строить сверхчеловека.</p>
+        <p class="manifesto-sign">Мамкин панк,<br>Константин К.</p>
+    </section>
 
-<body>
-
-    <main class="intro-container">
-
-        <section class="message-block manifesto-block">
-
-            <h1 class="manifesto-title">
-                Что такое Панк-ЗОЖ?
-            </h1>
-
-            <p>
-                Внезапно,
-                ЗОЖ — это здоровый образ жизни.
-            </p>
-
-            <p>
-                А панк —
-                это не только про ирокезы,
-                косухи и сомнительные жизненные решения.
-            </p>
-
-            <p>
-                Это протест против фитнес-пафоса,
-                волшебных таблеток
-                и чувства вины за съеденный тортик.
-            </p>
-
-            <p>
-                Я хочу показать,
-                что хорошее самочувствие —
-                это не элитный клуб.
-            </p>
-
-            <p>
-                Это обычное состояние организма,
-                к которому можно прийти
-                без самоистязания
-                и культа продуктивности.
-            </p>
-
-            <p>
-                Через сон.
-                Через движение.
-                Через маленькие регулярные действия.
-            </p>
-
-            <p>
-                В общем:
-                будем потихоньку чинить тушку,
-                а не строить сверхчеловека.
-            </p>
-
-            <p class="manifesto-sign">
-                Мамкин панк,<br>
-                Константин К.
-            </p>
-
-        </section>
-
-        <!-- Кнопки -->
-
-        <section class="buttons-block dual-buttons">
-
-            <a href="/checkin" class="primary-button">
-                Ладно, убедил
-            </a>
-
-            <div class="small-buttons">
-
-                <a href="/" class="secondary-button small-button">
-                    На главную
-                </a>
-
-                <a href="/articles" class="secondary-button small-button">
-                    Почитать
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-</body>
-</html>
+    <section class="buttons-block dual-buttons">
+        <a href="/checkin" class="primary-button">Ладно, убедил</a>
+        <div class="small-buttons">
+            <a href="/" class="secondary-button small-button">На главную</a>
+            <a href="/articles" class="secondary-button small-button">Почитать</a>
+        </div>
+    </section>
+{% endblock %}

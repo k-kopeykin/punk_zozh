@@ -3,13 +3,25 @@ import json
 from random import choice
 
 def score_result(answers):
-    
     with open('texts.json', 'r', encoding='utf-8') as f:
         texts = json.load(f)
         result = []
         for category in answers:
-            result.append(texts[category][answers[category]])
+            result.append(texts[category][str(answers[category])])
     return result
+
+def micro_actions(answers):
+    try:
+        with open('micro_actions.json', 'r', encoding='utf-8') as f:
+            texts = json.load(f)
+            category = min(answers, key=answers.get)
+            action = choice(texts[category][str(answers[category])])
+        
+    except (FileNotFoundError, KeyError, json.JSONDecodeError, ValueError):
+        action = "Что-то пошло не так. Выпей пока стакан воды. Это всегда хорошая идея."
+
+    return action
+
 
 
 

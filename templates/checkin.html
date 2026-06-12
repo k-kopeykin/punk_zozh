@@ -1,168 +1,72 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check-in</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+{% block title %}Check-in | Панк-ЗОЖ{% endblock %}
 
-<body>
+{% block content %}
 
-    <main class="intro-container">
-        <form method="POST">
+<!-- Блок для Flash-сообщений (он теперь тоже часть контента страницы) -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="message-block" style="margin-bottom: 2rem;">
+          {% for category, message in messages %}
+            <p class="flash-{{ category }}" style="font-weight: bold; color: #4CAF50;">
+              {{ message }}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
+    <form method="POST">
         <section class="message-block">
-
-            <h1 class="manifesto-title">
-                Быстро сверимся с реальностью
-            </h1>
-
+            <h1 class="manifesto-title">Быстро сверимся с реальностью</h1>
         </section>
 
-        <!-- Питание -->
-
         <section class="question-block">
-
             <h2>Ел сегодня?</h2>
-
             <div class="answers">
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="food" value="1">
-                        Кофе — тоже завтрак
-                    
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="food" value="2">
-                        Живу на перекусах
-                    
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="food" value="3">
-                        В целом, норм, но иногда пусто, а иногда густо
-                    
-                </label>
-                
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="food" value="4">
-                        Питаюсь хорошо — организм не жалуется
-                    
-                </label>
-
+                <label class="answer-button"><input type="radio" class="answer" name="food" value="1">Кофе — тоже завтрак</label>
+                <label class="answer-button"><input type="radio" class="answer" name="food" value="2">Живу на перекусах</label>
+                <label class="answer-button"><input type="radio" class="answer" name="food" value="3">В целом, норм, но иногда пусто, а иногда густо</label>
+                <label class="answer-button"><input type="radio" class="answer" name="food" value="4">Питаюсь хорошо — организм не жалуется</label>
             </div>
-
         </section>
 
-        <!-- Сон -->
-
         <section class="question-block">
-
             <h2>Как спалось?</h2>
-
             <div class="answers">
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="sleep" value="1">
-                    Что такое сон?
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="sleep" value="2">
-                    Ложусь поздно, встаю рано
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="sleep" value="3">
-                    В выходные отсыпаюсь
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="sleep" value="4">
-                    Не нарушаю режим!
-                </label>
-
+                <label class="answer-button"><input type="radio" class="answer" name="sleep" value="1">Что такое сон?</label>
+                <label class="answer-button"><input type="radio" class="answer" name="sleep" value="2">Ложусь поздно, встаю рано</label>
+                <label class="answer-button"><input type="radio" class="answer" name="sleep" value="3">В выходные отсыпаюсь</label>
+                <label class="answer-button"><input type="radio" class="answer" name="sleep" value="4">Не нарушаю режим!</label>
             </div>
-
         </section>
 
-        <!-- Активность -->
-
         <section class="question-block">
-
             <h2>Шевелишься вообще?</h2>
-
             <div class="answers">
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="activity" value="1">
-                    Лежу, не жужжу
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="activity" value="2">
-                    Двигаюсь в приступах мотивации
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="activity" value="3">
-                    Эпизодический физкультурник
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="activity" value="4">
-                    Ржаветь не собираюсь!
-                </label>
-
+                <label class="answer-button"><input type="radio" class="answer" name="activity" value="1">Лежу, не жужжу</label>
+                <label class="answer-button"><input type="radio" class="answer" name="activity" value="2">Двигаюсь в приступах мотивации</label>
+                <label class="answer-button"><input type="radio" class="answer" name="activity" value="3">Эпизодический физкультурник</label>
+                <label class="answer-button"><input type="radio" class="answer" name="activity" value="4">Ржаветь не собираюсь!</label>
             </div>
-
         </section>
-
-        <!-- Эмоции -->
 
         <section class="question-block">
-
             <h2>Как держишься?</h2>
-
             <div class="answers">
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="emotion" value="1">
-                    На морально-волевых
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="emotion" value="2">
-                    Держусь, назло врагам
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="emotion" value="3">
-                    В пределах нормы
-                </label>
-
-                <label class="answer-button">
-                    <input type="radio" class="answer" name="emotion" value="4">
-                    Жить хорошо и жизнь хороша!
-                </label>
-
+                <label class="answer-button"><input type="radio" class="answer" name="emotion" value="1">На морально-волевых</label>
+                <label class="answer-button"><input type="radio" class="answer" name="emotion" value="2">Держусь, назло врагам</label>
+                <label class="answer-button"><input type="radio" class="answer" name="emotion" value="3">В пределах нормы</label>
+                <label class="answer-button"><input type="radio" class="answer" name="emotion" value="4">Жить хорошо и жизнь хороша!</label>
             </div>
-
         </section>
-
-        <!-- Кнопка -->
 
         <section class="buttons-block">
-
-            <button type="submit" class="primary-button">
-                Поехали!
-            </button>
-
+            <button type="submit" class="primary-button">Поехали!</button>
         </section>
-        </form>
-    </main>
+    </form>
+
     <script>
         let buttons = document.querySelectorAll(".answer-button");
         buttons.forEach(button => {
@@ -172,10 +76,8 @@
                 questionButtons.forEach(btn => {
                     btn.classList.remove("selected");
                 });
-
                 button.classList.add("selected");
             });
         });
     </script>
-</body>
-</html>
+{% endblock %}

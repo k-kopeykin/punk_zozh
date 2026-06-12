@@ -30,6 +30,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    padding-bottom: 5rem;
 }
 
 /* Countdown */
@@ -349,4 +351,64 @@ body {
 
 .question-block {
     margin-bottom: 32px;
+}
+
+/* Карточки статей — разделение и воздух */
+.articles-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* отступ между карточками */
+    margin-bottom: 2rem;
+}
+
+.article-card {
+    background: #1a1a1a; /* или твой цвет карточки */
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* отступ между заголовком, текстом и кнопкой внутри карточки */
+}
+
+.article-card h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.article-card p {
+    margin: 0;
+    line-height: 1.5;
+    color: #b0b0b0; /* приглушенный цвет для описания */
+}
+
+.article-card .secondary-button {
+    align-self: flex-start; /* кнопка не растягивается на всю ширину */
+    margin-top: 0.5rem;
+}
+
+/* Глобальная кнопка кризисного режима */
+.global-crisis-nav {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.crisis-button {
+    background: transparent;
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.crisis-button:hover {
+    background: #ff6b6b;
+    color: #fff;
 }

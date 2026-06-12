@@ -1,55 +1,40 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панк-ЗОЖ</title>
 
-    <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
 
-<body>
+<!-- ===== intro.html ===== -->
+{% extends "base.html" %}
 
-    <main class="intro-container intro-screen">
+{% block title %}Панк-ЗОЖ: Обратный отсчет{% endblock %}
 
-        <!-- Обратный отсчет -->
-        <section class="countdown-block">
-            <p class="countdown-label">До лета осталось</p>
-            <h1 id="countdown" days_before_summer="days_before_summer">{{days_before_summer}}</h1>
-            <p class="countdown-label">{{word}}</p>
-        </section>
-
-        <!-- Контекстная фраза -->
-        <section class="message-block">
-            <p>
-                За это время ещё можно:
+{% block content %}
+    <!-- ВСТАВЬ СЮДА ТОЛЬКО УНИКАЛЬНЫЙ КОНТЕНТ INTRO -->
+    
+    <!-- Блок для Flash-сообщений (он теперь тоже часть контента страницы) -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="message-block" style="margin-bottom: 2rem;">
+          {% for category, message in messages %}
+            <p class="flash-{{ category }}" style="font-weight: bold; color: #4CAF50;">
+              {{ message }}
             </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
-            <ul>
-                <h3>{{summer_phrase}}</h3>
-                
-                
-            </ul>
-        </section>
+    <section class="countdown-block">
+        <p class="countdown-label">До лета осталось</p>
+        <h1 id="countdown">{{ days_before_summer }}</h1>
+        <p class="countdown-label">{{ word }}</p>
+    </section>
 
-        <!-- Кнопки -->
-        <section class="buttons-block">
+    <section class="message-block">
+        <p>За это время ещё можно:</p>
+        <p style="font-weight: bold; font-size: 1.1rem;">{{ summer_phrase }}</p>
+    </section>
 
-            <!-- Переход на check-in -->
-            <a href="/checkin" class="primary-button">
-                Ладно, давай попробуем
-            </a>
+    <section class="buttons-block">
+        <a href="/checkin" class="primary-button">Ладно, давай попробуем</a>
+        <a href="/manifesto" class="secondary-button">Что тут вообще происходит?</a>
+    </section>
 
-            <!-- Переход на манифест -->
-            <a href="/manifesto" class="secondary-button">
-                Что тут вообще происходит?
-            </a>
-
-        </section>
-
-    </main>
-
-</body>
-</html>
-
+{% endblock %}
