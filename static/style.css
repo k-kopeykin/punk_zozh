@@ -1,50 +1,38 @@
-/* Сброс базовых отступов */
-
+/* ===== Сброс базовых отступов ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Основной фон и шрифт */
-
+/* ===== Основной фон и шрифт ===== */
 body {
     background-color: #111111;
     color: #f5f5f5;
-
     font-family: Arial, sans-serif;
-
     min-height: 100vh;
-
     padding: 20px;
 }
 
-/* Главный контейнер */
-
+/* ===== Главный контейнер ===== */
 .intro-container {
     width: 100%;
     max-width: 500px;
-
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     gap: 40px;
-
-    padding-bottom: 5rem;
+    padding-bottom: 5rem; /* Отступ для глобальной кнопки "Не вывожу" */
 }
 
-/* Countdown */
-
+/* ===== Countdown ===== */
 .countdown-block {
     text-align: center;
 }
 
 .countdown-label {
     font-size: 18px;
-
     opacity: 0.7;
-
     margin-bottom: 10px;
 }
 
@@ -53,35 +41,25 @@ body {
     font-weight: bold;
 }
 
-/* Информационный блок */
-
+/* ===== Информационный блок ===== */
 .message-block {
     background-color: #1b1b1b;
-
     padding: 24px;
-
     border-radius: 16px;
-
     line-height: 1.6;
-
     text-align: center;
 }
 
 .message-block p {
     margin-bottom: 16px;
-
     font-size: 18px;
 }
 
-/* Списки */
-
+/* ===== Списки ===== */
 .message-block ul {
     text-align: left;
-
     width: fit-content;
-
     margin: 0 auto;
-
     padding-left: 20px;
 }
 
@@ -89,31 +67,35 @@ body {
     margin-bottom: 10px;
 }
 
-/* Кнопки */
-
+/* ===== Кнопки (общие контейнеры) ===== */
 .buttons-block {
     display: flex;
     flex-direction: column;
-
     gap: 16px;
 }
 
-/* Главная кнопка */
+.dual-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
+.small-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+/* ===== Главная кнопка ===== */
 .primary-button {
     background-color: #f5f5f5;
     color: #111111;
-
     text-decoration: none;
-
     text-align: center;
-
     padding: 18px;
-
     border-radius: 14px;
-
     font-weight: bold;
-
     transition: 0.2s;
 }
 
@@ -121,21 +103,14 @@ body {
     opacity: 0.85;
 }
 
-/* Вторичная кнопка */
-
+/* ===== Вторичная кнопка ===== */
 .secondary-button {
     background-color: #2a2a2a;
-
     color: #cccccc;
-
     text-decoration: none;
-
     text-align: center;
-
     padding: 16px;
-
     border-radius: 14px;
-
     transition: 0.2s;
 }
 
@@ -143,162 +118,51 @@ body {
     background-color: #3a3a3a;
 }
 
-/* Заголовки */
+.small-button {
+    padding: 12px;
+    font-size: 14px;
+}
 
+/* ===== Заголовки ===== */
 .manifesto-title {
     font-size: 34px;
-
     text-align: center;
-
     line-height: 1.2;
-
     margin-bottom: 20px;
 }
 
-/* Блок вопроса */
-
+/* ===== Блок вопроса ===== */
 .question-block {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .question-block h2 {
-    margin-bottom: 18px;
-
-    font-size: 22px;
-    font-weight: 600;
-}
-
-/* Ответы */
-
-.answers {
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-
-    margin-top: 20px;
-}
-
-/* Кнопки ответов */
-
-.answer-button {
-    width: 100%;
-
-    padding: 16px;
-
-    border: none;
-    border-radius: 14px;
-
-    background-color: #2a2a2a;
-    color: #f5f5f5;
-
-    font-size: 16px;
-    font-family: inherit;
-
-    text-align: left;
-
-    transition: 0.2s;
-}
-
-.answer-button:hover {
-    background-color: #3a3a3a;
-}
-
-/* Выбранный ответ */
-
-.answer-button.selected {
-    background-color: #ffffff;
-
-    color: #000000;
-
-    font-weight: 700;
-
-    transform: scale(1.02);
-
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
-}
-
-.intro-screen {
-    min-height: calc(100vh - 40px);
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-.results-block {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.result-card {
-    background-color: #1b1b1b;
-
-    padding: 22px;
-
-    border-radius: 16px;
-
-    line-height: 1.6;
-}
-
-.result-card p {
-    font-size: 17px;
-}
-
-.habit-title {
-    font-size: 20px;
-
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-.result-card p {
-    margin-bottom: 16px;
-}
-
-.manifesto-block p {
-    margin-bottom: 18px;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-.manifesto-sign {
-    margin-top: 30px;
-
-    opacity: 0.8;
-
-    font-style: italic;
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+    color: #f0f0f0;
 }
 
 /* ===== Блок ответов ===== */
-
 .answers {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-top: 20px;
 }
 
 /* ===== Карточка ответа ===== */
-
 .answer-button {
     display: block;
-
+    width: 100%;
     padding: 16px 18px;
-
     border: 2px solid #2e2e2e;
     border-radius: 14px;
-
     background-color: #1b1b1b;
-
     color: #f5f5f5;
-
+    font-size: 16px;
+    font-family: inherit;
+    text-align: left;
     cursor: pointer;
-
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease,
@@ -307,67 +171,88 @@ body {
 }
 
 /* ===== Hover ===== */
-
 .answer-button:hover {
     border-color: #5a5a5a;
-
     transform: translateY(-2px);
 }
 
 /* ===== Выбранный ответ ===== */
-
 .answer-button.selected {
     background-color: #2a2a2a;
-
     border-color: #b6ff8a;
-
     color: #ffffff;
-
     box-shadow: 0 0 12px rgba(182, 255, 138, 0.2);
 }
 
 /* ===== Скрываем radio ===== */
-
 .answer-button input[type="radio"] {
     position: absolute;
-
     opacity: 0;
-
     width: 0;
     height: 0;
 }
 
-/* ===== Заголовок вопроса ===== */
-
-.question-block h2 {
-    margin-bottom: 14px;
-
-    font-size: 1.2rem;
-
-    color: #f0f0f0;
+/* ===== Intro Screen ===== */
+.intro-screen {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* ===== Отступы между вопросами ===== */
-
-.question-block {
-    margin-bottom: 32px;
+/* ===== Результаты ===== */
+.results-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Карточки статей — разделение и воздух */
+.result-card {
+    background-color: #1b1b1b;
+    padding: 22px;
+    border-radius: 16px;
+    line-height: 1.6;
+}
+
+.result-card p {
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+
+.habit-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ===== Манифест ===== */
+.manifesto-block p {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.manifesto-sign {
+    margin-top: 30px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* ===== Карточки статей ===== */
 .articles-block {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* отступ между карточками */
+    gap: 2rem;
     margin-bottom: 2rem;
 }
 
 .article-card {
-    background: #1a1a1a; /* или твой цвет карточки */
+    background: #1a1a1a;
     border-radius: 12px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* отступ между заголовком, текстом и кнопкой внутри карточки */
+    gap: 1rem;
 }
 
 .article-card h2 {
@@ -379,15 +264,15 @@ body {
 .article-card p {
     margin: 0;
     line-height: 1.5;
-    color: #b0b0b0; /* приглушенный цвет для описания */
+    color: #b0b0b0;
 }
 
 .article-card .secondary-button {
-    align-self: flex-start; /* кнопка не растягивается на всю ширину */
+    align-self: flex-start;
     margin-top: 0.5rem;
 }
 
-/* Глобальная кнопка кризисного режима */
+/* ===== Глобальная кнопка кризисного режима ===== */
 .global-crisis-nav {
     position: fixed;
     bottom: 1.5rem;
@@ -411,4 +296,48 @@ body {
 .crisis-button:hover {
     background: #ff6b6b;
     color: #fff;
+}
+
+/* ===== Стили для Flash-сообщений ===== */
+.flash-success {
+    color: #b6ff8a; /* Зеленый для успеха */
+    font-weight: bold;
+}
+
+.flash-warning {
+    color: #ff9f43; /* Оранжевый для предупреждения */
+    font-weight: bold;
+}
+
+.flash-info {
+    color: #a4b0be; /* Серый для информации */
+    font-weight: bold;
+}
+
+.reg-prompt {
+    position: fixed;
+    bottom: 5rem; /* Выше кнопки кризиса */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1b1b1b;
+    border: 1px solid #b6ff8a;
+    padding: 1.2rem;
+    border-radius: 12px;
+    z-index: 99;
+    width: 90%;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.reg-prompt p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.reg-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }

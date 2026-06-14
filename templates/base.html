@@ -24,5 +24,55 @@
         </a>
     </div>
 
+    <!-- ===== Баннер регистрации (скрыт по умолчанию) ===== -->
+<div id="reg-prompt" class="reg-prompt" style="display: none;">
+    <p id="reg-text"></p>
+    <div class="reg-buttons">
+        <a href="/register" class="primary-button small-button">Привязать прогресс</a>
+        <button id="reg-dismiss" class="secondary-button small-button">Пока нет</button>
+    </div>
+</div>
+
+<!-- ===== Логика localStorage ===== -->
+<script>
+    const STORAGE_KEY = 'punk_zozh_actions_done';
+    const DISMISS_KEY = 'punk_zozh_prompt_dismissed';
+    const THRESHOLD = 5;
+
+    // Увеличить счётчик (вызывается при клике "Сделано")
+    function recordActionDone() {
+        try {
+            let count = parseInt(localStorage.getItem(STORAGE_KEY) || '0');
+            localStorage.setItem(STORAGE_KEY, String(count + 1));
+        } catch (e) {
+            // Игнорируем ошибки, если localStorage отключён
+        }
+    }
+
+    // Проверить и показать баннер при загрузке
+    function checkRegistrationPrompt() {
+        try {
+            const count = parseInt(localStorage.getItem(STORAGE_KEY) || '0');
+            const dismissed = localStorage.getItem(DISMISS_KEY);
+            
+            if (count >= THRESHOLD && !dismissed) {
+                document.getElementById('reg-text').textContent = 
+                    `Ты уже ${count} раз починил тушку. Хочешь, чтобы история не слетела при очистке кэша? Можно привязать прогресс. А можно и не привязывать. Решай сам.`;
+                document.getElementById('reg-prompt').style.display = 'flex';
+            }
+        } catch (e) {}
+    }
+
+    // Скрыть баннер и запомнить выбор
+    document.getElementById('reg-dismiss').addEventListener('click', function() {
+        try {
+            localStorage.setItem(DISMISS_KEY, 'true');
+        } catch (e) {}
+        document.getElementById('reg-prompt').style.display = 'none';
+    });
+
+    // Запуск проверки при загрузке
+    document.addEventListener('DOMContentLoaded', checkRegistrationPrompt);
+</script>
 </body>
 </html>

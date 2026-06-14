@@ -9,7 +9,7 @@
       {% if messages %}
         <div class="message-block" style="margin-bottom: 2rem;">
           {% for category, message in messages %}
-            <p class="flash-{{ category }}" style="font-weight: bold; color: #4CAF50;">
+            <p class="flash-{{ category }}" >
               {{ message }}
             </p>
           {% endfor %}

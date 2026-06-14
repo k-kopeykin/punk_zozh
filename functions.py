@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, timedelta
 import json
 from random import choice
 
@@ -59,6 +59,14 @@ def get_summer_phrase(summer_starts_in):
     else:
         summer_phrase = "Вот такое странное лето..."
     return summer_phrase
+
+def today_or_yesterday():
+    now = datetime.now()
+    time = now.hour
+    today = date.today()
+    if time < 4:
+        today = today - timedelta(days=1)
+    return str(today)
     
 
 

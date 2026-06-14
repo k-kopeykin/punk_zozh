@@ -17,18 +17,17 @@
     </section>
 
     <section class="buttons-block dual-buttons">
-        <a href="/acknowledge?status=done" class="primary-button">Сделано! Пиу-пиу</a>
+        <a href="/acknowledge?status=done" class="primary-button" onclick="recordActionDone()">Сделано! Пиу-пиу</a>
         <a href="/acknowledge?status=skip" class="secondary-button">Пожалуй, нет</a>
     </section>
 
-    <div style="margin: 2rem 0; border-top: 1px solid #ccc; opacity: 0.3;"></div>
+    
 
     <section class="buttons-block" style="flex-direction: column; gap: 1rem;">
-        <a href="/checkin" class="secondary-button">Повторная оценка (новый чек-ин)</a>
+        
         
         <div class="small-buttons" style="justify-content: center; margin-top: 1rem;">
             <a href="/articles" class="secondary-button small-button">Почитать</a>
-            <a href="/" class="secondary-button small-button">Обновить страницу</a>
-        </div>
+        </div>    
     </section>
 {% endblock %}

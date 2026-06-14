@@ -19,12 +19,15 @@
         <p class="habit-title">Попробуй сегодня:</p>
         <p>{{ action }}</p>
     </section>
-
     <section class="buttons-block dual-buttons">
-        <a href="/checkin" class="primary-button">Проверить себя ещё раз</a>
+        <a href="/acknowledge?status=done" class="primary-button" onclick="recordActionDone()">Сделано! Пиу-пиу</a>
+        <a href="/acknowledge?status=skip" class="secondary-button">Пожалуй, нет</a>
+    </section>
+    
+        
         <div class="small-buttons">
-            <a href="/" class="secondary-button small-button">На главную</a>
+            
             <a href="/articles" class="secondary-button small-button">Почитать</a>
         </div>
-    </section>
+    
 {% endblock %}
